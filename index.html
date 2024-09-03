@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="calculator">
+            <h2 class="first-title">Mortgage Calculator</h2>
+            <form action="amount">
+                <div id="mortgage">
+                    <label for="amount">Mortgage Amount</label>
+                    <input type="number" name="amount" id="amount">
+                </div>
+                <div id="term">
+                    <label for="term1">Mortgage Term</label>
+                    <input type="number" name="term1" id="term1">
+                    <label for="rate">Interest Rate</label>
+                    <input type="number" name="rate" id="rate">
+                </div>
+                <label class="mortgage-type" for="mortgage-type">Mortgage Type</label>
+                <div id="repayment">
+                    <input type="radio" name="repayment1" id="repayment1">
+                    <label for="repayment1">Repayment</label>
+                </div>
+                <div id="interest">
+                    <input type="radio" name="interest-only" id="interest-only">
+                    <label for="interest-only">Interest Only</label>
+                </div>
+                <button class="calculate" type="button">Calculate Repayments</button>
+            </form>
+        </div>
+        <div id="results">
+            <img class="gif" src="assets/images/illustration-empty.png" alt="" width="50%">
+            <h3 class="second-title">Results shown here</h3>
+            <p class="tutorial">Complete the form and click "Calculate Repayments" to<br>see what your monthly
+                repayments would be.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

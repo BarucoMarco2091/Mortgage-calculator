@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+    --lime: hsl(61, 70%, 52%);
+    --red: hsl(4, 69%, 50%);
+    --white: hsl(0, 0%, 100%);
+    --slate100: hsl(202, 86%, 94%);
+    --slate300: hsl(203, 41%, 72%);
+    --slate500: hsl(200, 26%, 54%);
+    --slate700: hsl(200, 24%, 40%);
+    --slate900: hsl(202, 55%, 16%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--slate100);
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 15vh;
+    width: 120vh;
+    height: 70vh;
+    background-color: var(--white);
+    border-radius: 0 15px 15px 0;
+}
+
+#container #calculator {
+    background-color: var(--white);
+    flex: 1;
+}
+
+#container #calculator h2 {
+    color: var(--slate900);
+    font-family: 'Plus Jakarta', serif, sans-serif;
+    font-size: 16px;
+    margin-top: 5vh;
+    margin-left: 5vh;
+}
+
+#container #calculator #mortgage {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    margin-left: 5vh;
+}
+
+#container #calculator #mortgage label {
+    color: var(--slate500);
+    font-family: 'Plus Jakarta', serif, sans-serif;
+    font-size: 16px;
+    margin-bottom: 1vh;
+}
+
+#container #calculator #mortgage #amount {
+    width: 50vh;
+    height: 4vh;
+    justify-content: space-evenly;
+}
+
+#container #calculator #term {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3vh;
+    margin-left: 5vh;
+    margin-bottom: 5vh;
+    color: var(--slate500);
+}
+
+#container #calculator #term #term1 {
+    width: 10vh;
+    height: 3vh;
+}
+
+#container #calculator #term #rate {
+    width: 10vh;
+    height: 3vh;
+}
+
+#container #calculator .mortgage-type {
+    color: var(--slate500);
+    margin-left: 5vh;
+    font-family: 'Plus Jakarta', serif, sans-serif;
+    font-size: 16px;
+}
+
+#container #calculator #repayment {
+    width: 50vh;
+    height: 4vh;
+    border: solid var(--slate300);
+    margin: 0 auto;
+    margin-top: 2vh;
+}
+
+#container #calculator #repayment #repayment1 {
+    align-items: center;
+    margin-left: 2vh;
+    margin-top: 1vh;
+}
+
+#container #calculator #repayment label {
+    color: var(--slate900);
+    margin-left: 2vh;
+}
+
+#container #calculator #interest {
+    width: 50vh;
+    height: 4vh;
+    border: solid var(--slate300);
+    margin: 0 auto;
+    margin-top: 2vh;
+}
+
+#container #calculator #interest #interest-only {
+    align-items: center;
+    margin-left: 2vh;
+    margin-top: 1vh;
+}
+
+#container #calculator .calculate {
+    margin-top: 5vh;
+    margin-left: 5vh;
+    border-radius: 10vh;
+    color: var(--slate900);
+    font-family: 'Plus Jakarta', serif, sans-serif;
+    font-size: 16px;
+    width: 40vh;
+    height: 5vh;
+}
+
+#container #calculator .calculate:hover {
+    background-color: var(--lime);
+}
+
+#container #results {
+    background-color: var(--slate900);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-radius: 0 15px 15px 50px;
+}
+
+#container #results .gif {
+    margin-top: 13vh;
+    margin-left: 15vh;
+    max-width: 100%;
+    height: auto;
+}
+
+#container #results .second-title {
+    color: var(--white);
+    font-family: 'Plus Jakarta', serif, sans-serif;
+    font-size: 16px;
+    margin-top:2vh;
+    text-align: center;
+}
+
+#container #results .tutorial {
+    margin-top: 2vh;
+    text-align: center;
+    color: var(--slate500);
+    font-family: 'Plus Jakarta', serif, sans-serif;
+    font-size: 16px;
+}
+
+@media screen and (max-width:360px) {
+    #container {
+        display: grid;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    #container #calculator {
+        flex: 1;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    #container {
+        display: grid;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    #container #calculator {
+        flex: 1;
+    }
+
+    #container #calculator .calculate {
+        margin-bottom: 2vh;
+    }
+}
