@@ -1,35 +1,50 @@
 const calculus = document.querySelector('.calculate');
 calculus.addEventListener('click', () => {
     document.getElementById('results').innerHTML =
-        `
+    `
     <div id="new-results">
     <h2>Your results</h2>
-    <p>Your results are shown below based on the information<br>you provided. To adjust the results,edit the form and<br> click "calculate repayments" again.</p>
+    <p>Your results are shown below based on the information<br>you provided. To adjust the results, edit the form and<br> click "calculate repayments" again.</p>
     <div>
     <p>Your monthly repayments</p>
+    <div>
+    <p id="monthly-repayment"></p>
+    </div>
     </div>
     </div>
     `
+    
+        interest();
+    
+        calculateMortgage();
+    
+    
 });
 
 const interestOnly = document.getElementById('interest-only');
 interestOnly.addEventListener('change', interest);
 
 const mortgage = document.getElementById('repayment1');
-mortgage.addEventListener('change', mortgage);
+mortgage.addEventListener('change', calculateMortgage);
 
 function interest() {
-    const mortgageAmount = document.getElementById('amount');
-    const interestRate = document.getElementById('rate');
-    if (mortgageAmount === "0" || interestRate === "0") {
+    const mortgageAmount = parseFloat(document.getElementById('amount').value);
+    const interestRate = parseFloat(document.getElementById('rate').value);
+    const monthlyRepayment = document.getElementById('monthly-repayment');
+    const monthlyInterest = (mortgageAmount * (interestRate / 100)) / 12;
+    monthlyRepayment.innerHTML = `£${monthlyInterest.toFixed(2)}`;
 
-    } else {
-
-    }
 };
 
-function mortgage() {
-    const mortgageAmount = document.getElementById('amount');
-    const interestRate = document.getElementById('rate');
-    const mortgageTerm = document.getElementById('term1');
+function calculateMortgage() {
+    const principal = parseFloat(document.getElementById('amount').value);
+    const annualInterestRate = parseFloat(document.getElementById('rate').value);
+    const termInYears = parseFloat(document.getElementById('term1').value);
+    const monthlyRepayment = document.getElementById('monthly-repayment');
+    const monthlyInterestRate = annualInterestRate / 12 / 100;
+    const numberOfPayments = termInYears * 12;
+    const numerator = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments);
+    const denominator = Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1;
+    const monthlyPayment = principal * (numerator / denominator);
+    monthlyRepayment.innerHTML = `£${monthlyPayment.toFixed(2)}`;
 };
