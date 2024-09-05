@@ -170,6 +170,24 @@ body {
     font-size: 16px;
 }
 
+#new-results {
+    height: 35vh;
+}
+
+#new-results h2 {
+    color: var(--white);
+    margin-top: 5vh;
+    margin-left: 5vh;
+    font-family: 'Plus Jakarta', serif, sans-serif;
+    font-size: 16px;
+}
+
+#new-results p {
+    color: var(--slate500);
+    margin-top: 3vh;
+    margin-left: 5vh;
+}
+
 @media screen and (max-width:360px) {
     #container {
         display: grid;
